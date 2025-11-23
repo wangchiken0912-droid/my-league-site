@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D LEAGUE｜賽程與結果</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <h1 class="site-title">D LEAGUE｜賽程與結果</h1>
+    </div>
+</header>
+
+<nav class="nav">
+    <div class="container nav-inner">
+        <button class="nav-btn active" data-target="l1">L1 賽程</button>
+        <button class="nav-btn" data-target="l2">L2 賽程</button>
+    </div>
+</nav>
+
+<main class="container">
+
+    <!-- L1 SECTION -->
+    <section id="l1" class="schedule-section active">
+
+        <h2 class="section-title">L1 賽程與結果</h2>
+
+        <!-- 範例：你之後只要把資料貼進來即可 -->
+        <div class="match-card">
+            <div class="match-round">第 1 輪</div>
+            <div class="match-info">
+                <div class="team home">鹿逐俱樂部</div>
+                <div class="score final">1 : 2</div>
+                <div class="team away">屏東野猿 FC</div>
+            </div>
+            <div class="match-meta">2025-02-16｜仁德文賢國中</div>
+        </div>
+
+        <div class="match-card">
+            <div class="match-round">第 1 輪</div>
+            <div class="match-info">
+                <div class="team home">瘋Dog FC</div>
+                <div class="score final">5 : 0</div>
+                <div class="team away">蒼龍</div>
+            </div>
+            <div class="match-meta">2025-02-16｜仁德文賢國中</div>
+        </div>
+
+    </section>
+
+    <!-- L2 SECTION -->
+    <section id="l2" class="schedule-section">
+
+        <h2 class="section-title">L2 賽程與結果</h2>
+
+        <div class="match-card">
+            <div class="match-round">第 1 輪</div>
+            <div class="match-info">
+                <div class="team home">酒號矯正署</div>
+                <div class="score final">1 : 5</div>
+                <div class="team away">逆轉勝 FC</div>
+            </div>
+            <div class="match-meta">2025-02-16｜仁德文賢國中</div>
+        </div>
+
+    </section>
+
+</main>
+
+<script>
+    // Tab 切換
+    const btns = document.querySelectorAll('.nav-btn');
+    const sections = document.querySelectorAll('.schedule-section');
+
+    btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            sections.forEach(sec => sec.classList.remove('active'));
+            document.getElementById(btn.dataset.target).classList.add('active');
+        });
+    });
+</script>
+
+</body>
+</html>
